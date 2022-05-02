@@ -37,6 +37,12 @@ UserSchema.methods.createJWT = function () {
   )
 }
 
+// Check password
+UserSchema.methods.checkPassword = async function (password) {
+  const isValid = await bcrypt.compare(password, this.password)
+  return isValid
+}
+
 // Hash password
 UserSchema.pre('save', async function (next) {
   const salt = await bcrypt.genSalt(10)

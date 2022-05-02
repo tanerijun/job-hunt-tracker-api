@@ -17,11 +17,12 @@ JWT_SECRET = <Your JWT_Secret (can be any string but I recommend using a key gen
 
 #### What's working
 
-- Validation - name, email, password - with Mongoose
+- Input validation with Mongoose
 - Hash Password (with bcryptjs)
 - Save User to mongoDB
 - Generate JWT Token
 - Error handling for various scenarios
+- User authentication
 
 #### Security
 
