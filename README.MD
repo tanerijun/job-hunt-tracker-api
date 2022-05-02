@@ -1,7 +1,7 @@
 ## myJobs - Backend
 The backend of myJobs. 
 
-A simple fullstack app to save your jobs history.
+A simple fullstack app to track your job hunting status.
 
 #### Setup
 
