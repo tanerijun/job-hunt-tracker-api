@@ -28,9 +28,13 @@ const UserSchema = new mongoose.Schema({
 // Use old function syntax so that it scope the whole document
 // Generate token
 UserSchema.methods.createJWT = function () {
-  return jwt.sign({ userId: this._id, name: this.name }, 'jwtsecret', {
-    expiresIn: '30d',
-  })
+  return jwt.sign(
+    { userId: this._id, name: this.name },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: '30d',
+    }
+  )
 }
 
 // Hash password

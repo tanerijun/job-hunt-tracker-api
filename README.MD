@@ -12,7 +12,7 @@ npm install && npm start
 1. Setup .env in the root
 ```
 MONGO_URI = <Your mongoDB connection string>
-JWT_SECRET = <Your JWT_Secret>
+JWT_SECRET = <Your JWT_Secret (can be any string but I recommend using a key generator)>
 ```
 
 #### What's working
