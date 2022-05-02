@@ -23,7 +23,7 @@ const JobSchema = new mongoose.Schema(
       required: [true, 'Please provide user'],
     },
   },
-  { timestamps: true }
+  { timestamps: true } // to get createdAt and updatedAt automatically from mongoose
 )
 
 module.exports = mongoose.model('Job', JobSchema)
