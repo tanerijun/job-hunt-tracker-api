@@ -10,6 +10,9 @@ const jobsRouter = require('./routes/jobs')
 // db
 const connectDB = require('./db/connect')
 
+// auth
+const authUser = require('./middleware/authentication')
+
 // error handler
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
@@ -28,7 +31,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/v1/auth', authRouter)
-app.use('/api/v1/jobs', jobsRouter)
+// Only authenticated user can access the job route
+app.use('/api/v1/jobs', authUser, jobsRouter)
 
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
