@@ -1,7 +1,5 @@
-# jobHuntTracker - Backend
-The backend of myJobs. 
-
-A simple fullstack app to track your job hunting status.
+# jobHuntTracker - API
+A simple app to track your job hunting status.
 
 ## Installation
 
@@ -25,16 +23,4 @@ A simple fullstack app to track your job hunting status.
 - Error handling for various scenarios
 - User authentication
 - Security with helmet, cors, xss-clean, and express-rate-limit
-
-Swagger UI
-
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
-```
+- Documentation with swagger
