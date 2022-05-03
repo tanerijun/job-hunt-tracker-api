@@ -24,3 +24,6 @@ An API to track your job hunting status.
 - User authentication
 - Security with helmet, cors, xss-clean, and express-rate-limit
 - Documentation with swagger
+
+## API Usage
+[Documentation](https://job-hunt-tracker-api.herokuapp.com/api/docs/)
