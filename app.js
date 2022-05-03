@@ -23,6 +23,11 @@ const cors = require('cors')
 const xss = require('xss-clean')
 const expressRateLimit = require('express-rate-limit')
 
+// swagger
+const swaggerUI = require('swagger-ui-express')
+const YAML = require('yamljs')
+const swaggerDocument = YAML.load('./swagger.yaml')
+
 // middlewares
 app.set('trust proxy', 1) // Have to enable this if app is behind a reverse proxy (Heroku)
 app.use(
@@ -39,15 +44,18 @@ app.use(xss())
 // routes
 const homeHTML = `
 <h3>Welcome to jobHuntTracker API</h3>
-<p>Please consult the documentation for proper usage</p>
+<p>Please consult the <a href="/api/docs">documentation</a> for proper usage</p>
 `
 
 app.get('/', (req, res) => {
   res.send(homeHTML)
 })
 
+// docs route
+app.use('/api/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
+
 app.use('/api/v1/auth', authRouter)
-// Only authenticated user can access the job route
+// only authenticated user can access the job route
 app.use('/api/v1/jobs', authUser, jobsRouter)
 
 app.use(notFoundMiddleware)
