@@ -38,7 +38,7 @@ app.use(xss())
 
 // routes
 const homeHTML = `
-<h3>Welcome to myJobsAPI</h3>
+<h3>Welcome to jobHuntTracker API</h3>
 <p>Please consult the documentation for proper usage</p>
 `
 
