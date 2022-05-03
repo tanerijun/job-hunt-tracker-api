@@ -1,5 +1,5 @@
 # jobHuntTracker - API
-A simple app to track your job hunting status.
+An API to track your job hunting status.
 
 ## Installation
 
